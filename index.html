@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Buwaya</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Inter:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
 <style>
@@ -163,7 +165,9 @@ body.reading .lang{opacity:0;pointer-events:none}
 @media (prefers-reduced-motion:reduce){.roll div{transition:none;opacity:1;transform:none}.collage button{transition:none}.sub span{opacity:1;filter:none;transition:none}.sky div,.shot{transition:none}.shot.kb img,.grain{animation:none}.open h1,.open .begin,.open .hint{transition:none}html{scroll-snap-type:y proximity}}
 @media (max-width:600px){
   :root{--bar:0px}
-  .shot{width:100%;aspect-ratio:auto}
+  .stage{bottom:auto;height:100vh;height:100svh;place-items:start center}
+  .shot{width:100%;aspect-ratio:auto;margin-top:max(1.5rem,calc(50vh - 100vw / 2.8 - 3.5rem))}
+  @supports (height:100svh){.shot{margin-top:max(1.5rem,calc(50svh - 100vw / 2.8 - 3.5rem))}}
   .pic{position:relative;inset:auto;border-radius:0}
   .pic img{height:auto}
   .pic::after{display:none}
