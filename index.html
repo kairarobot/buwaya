@@ -147,6 +147,9 @@ button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .credits.on .roll div:nth-child(3){transition-delay:1s}
 .roll dt{font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.5rem}
 .roll dd{margin:0;font-family:"Newsreader",Georgia,serif;font-size:clamp(1.6rem,4.5vw,2.4rem);color:var(--ink)}
+.roll dd a.credit-link{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em;text-decoration-color:rgba(233,228,218,.45);pointer-events:auto}
+.roll dd a.credit-link:hover{text-decoration-color:#f3c63f;color:#f3c63f}
+.roll dd a.credit-link:focus-visible{outline:2px solid #f3c63f;outline-offset:3px}
 .roll dd.tbd{min-height:1.2em}
 .notes .again2{margin:7rem 0 2rem;text-align:center}
 .again2 button{font-size:1.05rem;padding:.8rem 2rem}
@@ -239,7 +242,7 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
   <section class="screen credits" data-scene="after" aria-label="Credits">
     <dl class="roll">
       <div><dt>Written and Illustrated by</dt><dd>Kaira Ray Villanueva</dd></div>
-      <div><dt>Music</dt><dd>“Atrium” by waavs</dd></div>
+      <div><dt>Music</dt><dd><a class="credit-link" href="https://all-genre.com/atrium" target="_blank" rel="noopener noreferrer">“atrium”</a> by waavs</dd></div>
     </dl>
   </section>
   <section class="after-notes" aria-labelledby="ov-title">
@@ -251,11 +254,11 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
       <p>Pax Silica is a US‑led coalition launched in December 2025 to secure supply chains for artificial intelligence, semiconductors and critical minerals. The Philippines joined in April 2026. Its centerpiece here is a planned 1,600‑hectare (4,000‑acre) “economic security zone” for advanced manufacturing in New Clark City, Capas, Tarlac, on land that was once part of the US Clark military reservation. A binding framework agreement with the United States was expected in November 2026; it was not signed at the ASEAN summit, and the Board of Investments says it still expects a signing before the end of the year.</p>
 
       <h3>What the government says</h3>
-      <p>Officials present Pax Silica as a way to move the economy beyond call centers, remittances and consumption: high‑tech jobs, new investment, and processing Philippine nickel at home instead of shipping raw ore to China. The Bases Conversion and Development Authority says the hub sits inside zones already set aside for construction, that farmers and Aeta communities will not be displaced, and that affected families will be offered relocation sites, farm areas and jobs.</p>
+      <p>Officials present Pax Silica as a way to move the economy beyond call centers, remittances and consumption: high‑tech jobs, new investment, and processing Philippine nickel at home instead of shipping raw ore to China. The Bases Conversion and Development Authority says the hub sits inside zones already set aside for construction, that farmers and Ayta communities will not be displaced, and that affected families will be offered relocation sites, farm areas and jobs.</p>
 
-      <h3>What farmers, Aeta communities and their allies say</h3>
-      <p>Mongabay reports that the land planned for the hub overlaps territory that thousands of Aeta people claim as their ancestral domain. Like many Indigenous communities in the Philippines, most hold no formal title, which must be applied for through the National Commission on Indigenous Peoples. Geographers who mapped the site argue that a missing title doesn’t erase an ancestral claim; it shows how little support the government has given. An elder of the Aeta Hungey tribe told Mongabay that the BCDA has already started telling families they will have to leave. “Where are we going to live? How about our crops?” she asked.</p>
-      <p>Communities say they were never asked for free, prior and informed consent. Peasant and environmental groups warn that around 20,000 Aeta residents and farmers living around the site could lose their homes or livelihoods; the government disputes that figure, saying only about 10 hectares of Aeta‑occupied land is affected.</p>
+      <h3>What farmers, Ayta communities and their allies say</h3>
+      <p>Mongabay reports that the land planned for the hub overlaps territory that thousands of Ayta people claim as their ancestral domain. Like many Indigenous communities in the Philippines, most hold no formal title, which must be applied for through the National Commission on Indigenous Peoples. Geographers who mapped the site argue that a missing title doesn’t erase an ancestral claim; it shows how little support the government has given. An elder of the Ayta Hungey tribe told Mongabay that the BCDA has already started telling families they will have to leave. “Where are we going to live? How about our crops?” she asked.</p>
+      <p>Communities say they were never asked for free, prior and informed consent. Peasant and environmental groups warn that around 20,000 Ayta residents and farmers living around the site could lose their homes or livelihoods; the government disputes that figure, saying only about 10 hectares of Ayta‑occupied land is affected.</p>
       <p>Water is another worry. Protesters point to the hub’s water and energy use and its waste management plans. A scientist with the Network Opposed to Pax Silica warned that the hub would need the most water during the dry season, from December to May, the same months farmers depend on it to irrigate their fields. Planning documents for New Clark City also list data centers, which use large amounts of power and water.</p>
       <p>Beyond Tarlac, the concern is mining. The Philippines is already the world’s second‑largest producer of nickel, and a critical‑minerals policy signed in August 2026 opens the way for more extraction. Rural and Indigenous communities near mines have long reported polluted rivers, lost farmland and forced relocation, and advocates fear Pax Silica will deepen that pressure. Others raise questions of sovereignty and of tying the country more closely to US military supply chains. A petition against the project gathered close to 400,000 signatures by August.</p>
 
@@ -519,7 +522,7 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
       if(sc.pulse){ const v=Math.min(sc.pulse,1); for(let k=0;.3+k*1.25<sc.bar-.3;k++){ thump(.3+k*1.25,.8*v); thump(.62+k*1.25,.45*v) } }
       barT=setTimeout(bar,sc.bar*1000);
     }
-    /* ---------- recorded score: "Atrium" ---------- */
+    /* ---------- recorded score: "atrium" ---------- */
     const track=document.getElementById('track'); let trackNode=null;
     function musicScene(s){ mScene=s; }
     function startMusic(){
@@ -551,19 +554,24 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
       const lit=ctx?on:want;
       btn.setAttribute('aria-pressed',lit);
       btn.innerHTML=lit
-        ?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg>Sound on'
+        ?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg>'+((ctx&&on&&!(ctx.state==='running'&&!track.paused))?'Tap for sound':'Sound on')
         :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M17 9l5 6M22 9l-5 6"/></svg>Sound off';
     }
     btn.addEventListener('click',()=>{ want=!(ctx?on:want); set(want) });
+    const UNLOCK=['pointerdown','pointerup','touchstart','touchend','click','keydown'];
+    try{ if(navigator.audioSession) navigator.audioSession.type='playback'; }catch(e){}
+    function unlocked(){ return ctx && ctx.state==='running' && !track.paused; }
     function unlock(e){
-      if(e.target.closest && e.target.closest('#sound')) return;
-      if(want){ if(!on) set(true); else { if(ctx) ctx.resume(); if(playing) startMusic(); } }
-      ['pointerdown','keydown','touchend'].forEach(t=>removeEventListener(t,unlock,true));
+      if(e.target && e.target.closest && e.target.closest('#sound')) return;
+      if(!want) return;
+      if(!on) set(true); else { if(ctx) ctx.resume(); if(playing) startMusic(); }
+      // keep listening until the browser actually lets sound play (a swipe doesn't count; a tap does)
+      setTimeout(()=>{ if(unlocked()) UNLOCK.forEach(t=>removeEventListener(t,unlock,{capture:true})); },300);
     }
-    ['pointerdown','keydown','touchend'].forEach(t=>addEventListener(t,unlock,true));
+    UNLOCK.forEach(t=>addEventListener(t,unlock,{capture:true,passive:true}));
     document.addEventListener('visibilitychange',()=>{ if(!ctx) return; if(document.hidden){ ctx.suspend(); track.pause(); } else if(on){ ctx.resume(); startMusic(); } });
     ui();
-    function tryAutoStart(){ try{ set(true); }catch(e){} if(ctx){ const upd=()=>{ document.querySelector('.tapnote').style.display = (ctx.state==='running' && !track.paused) ? 'none' : ''; }; ctx.onstatechange=upd; track.addEventListener('play',upd); track.addEventListener('pause',upd); upd(); } }
+    function tryAutoStart(){ try{ set(true); }catch(e){} if(ctx){ const upd=()=>{ document.querySelector('.tapnote').style.display = (ctx.state==='running' && !track.paused) ? 'none' : ''; ui(); }; ctx.onstatechange=upd; track.addEventListener('play',upd); track.addEventListener('pause',upd); upd(); } }
     return {mix,set,thunder,tryAutoStart,show(){btn.classList.add('show');document.querySelector('.lang').classList.add('show')}};
   })();
 
